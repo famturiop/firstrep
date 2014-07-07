@@ -14,12 +14,12 @@ namespace обучалка                  //пространство имён
             int n = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("ведите эл-ты");
             int[] array = new int[n];
-            for (int i = 0; i < n-1; i++)
+            for (int i = 0; i < n; i++)
             {
                 array[i] = Convert.ToInt32(Console.ReadLine());
             }
             met(array, n);
-            for (int i = 0; i < n - 1; i++)
+            for (int i = 0; i < n; i++)
             {
                 Console.WriteLine(array[i]);
             }
@@ -28,18 +28,18 @@ namespace обучалка                  //пространство имён
 
         static void met(int[] array1, int b1)  
         {
-            for (int i = 0; i < b1 - 1; i++)  
+            for (int i = 0; i < b1; i++)  
             {
-                int min = array1[i];
-                for (int j = i + 1; j < b1 - 1; j++)
-                {
-                    if (array1[j] < min)
+               for (int j = 0; j < i; j++)
+               {
+                if (array1[i] < array1[j])
                     {
                         int x = array1[j];
-                        array1[j] = min;
-                        min = x;
-                    }    
-                }
+                        array1[j] = array1[i];
+                        array1[i] = x;
+                    }
+               }
+            
             }
         }  
     }
